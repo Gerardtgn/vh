@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* ========== NAVIGATION ========== */
 .navbar {
-    background: rgba(26, 42, 42, 0.95);
+    background: white;
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     transition: var(--transition);
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 .navbar-scrolled {
     padding: 0.5rem 0;
-    background: rgba(26, 42, 42, 0.98);
+    background: white;
 }
 
 .navbar-brand {
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 }
 
 .nav-link {
-    color: white !important;
+    color: #333 !important;
     font-weight: 500;
     margin: 0 0.5rem;
     transition: var(--transition);
@@ -118,7 +118,8 @@ h1, h2, h3, h4, h5, .navbar-brand {
 }
 
 .hero h2 {
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 3rem;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 
@@ -355,9 +356,9 @@ h1, h2, h3, h4, h5, .navbar-brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 22px;
+    padding: 14px 30px;
     border-top: 1px solid #f0f1f3;
-    margin: 0 -22px;
+    margin: 0 -10px;
     background: transparent;
     backdrop-filter: none;
     border-radius: 0;
@@ -1095,9 +1096,10 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* ========== FOOTER ========== */
 .footer {
-    background: var(--dark-bg);
-    color: #ccc;
+    background: white;
+    color: #333;
     padding: 60px 0 20px;
+    border-top: 1px solid #e8e8e8;
 }
 
 .footer h5 {
@@ -1116,7 +1118,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #666;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -1134,12 +1136,12 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: rgba(255,255,255,0.1);
+    background: #f0f0f0;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #333;
     transition: var(--transition);
     text-decoration: none;
 }
@@ -1147,14 +1149,15 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .social-links a:hover {
     background: var(--primary-yellow);
     transform: translateY(-3px);
-    color: var(--dark-bg);
+    color: white;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
     margin-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid #e8e8e8;
+    color: #999;
 }
 
 /* ========== MODAL ========== */
@@ -1600,3 +1603,176 @@ h1, h2, h3, h4, h5, .navbar-brand {
     }
 }
 
+/* ========== CARTES CULTES - HAUTEUR UNIFORME ========== */
+.cultes-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Hauteur uniforme sur tous les écrans */
+.card-culte-modern {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 480px;
+}
+
+.card-culte-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Heure - toujours visible et bien positionné */
+.culte-heure-bloc {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 14px 22px;
+    border-top: 1px solid #f0f1f3;
+    margin-top: auto;
+    background: #ffffff;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+}
+
+/* Description avec hauteur flexible */
+.culte-description {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+
+/* ========== RESPONSIVE - PETITS ÉCRANS ========== */
+@media (max-width: 768px) {
+    /* Ajustement des cartes pour petits écrans */
+    .card-culte-modern {
+        min-height: auto;
+        height: auto;
+    }
+    
+    /* Heure bien visible sur mobile */
+    .culte-heure-bloc {
+        padding: 12px 18px;
+        margin-top: 15px;
+        font-size: 14px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        width: calc(100% - 36px);
+        margin-left: 18px;
+        margin-right: 18px;
+        margin-bottom: 18px;
+    }
+    
+    /* Contenu de la carte sur mobile */
+    .card-culte-content {
+        padding: 20px 18px 0;
+    }
+    
+    /* Image wrapper plus petit sur mobile */
+    .culte-image-wrapper {
+        height: 220px;
+    }
+    
+    /* Titre plus lisible sur mobile */
+    .culte-titre {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    /* Sous-titre visible */
+    .culte-sous-titre {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        display: block;
+    }
+    
+    /* Description visible et lisible */
+    .culte-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+        display: block;
+    }
+    
+    /* Badge jour */
+    .culte-jour-badge {
+        font-size: 11px;
+        margin-bottom: 12px;
+        display: inline-block;
+    }
+}
+
+/* Très petits écrans (téléphones) */
+@media (max-width: 576px) {
+    .card-culte-modern {
+        margin-bottom: 20px;
+    }
+    
+    .culte-image-wrapper {
+        height: 200px;
+    }
+    
+    .card-culte-content {
+        padding: 16px 14px 0;
+    }
+    
+    .culte-heure-bloc {
+        padding: 10px 14px;
+        font-size: 13px;
+        width: calc(100% - 28px);
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-bottom: 14px;
+    }
+    
+    .culte-titre {
+        font-size: 1.1rem;
+    }
+    
+    .culte-sous-titre {
+        font-size: 0.8rem;
+    }
+    
+    .culte-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-culte-modern {
+        min-height: 460px;
+    }
+    
+    .culte-image-wrapper {
+        height: 240px;
+    }
+    
+    .culte-titre {
+        font-size: 1.1rem;
+    }
+    
+    .culte-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========== GARANTIE QUE L'HEURE S'AFFICHE TOUJOURS ========== */
+/* Supprimer tout display:none potentiel */
+.culte-heure-bloc,
+.culte-heure-bloc i,
+.culte-heure-bloc span {
+    display: flex !important;
+}
+
+/* S'assurer que le sous-titre est toujours visible */
+.culte-sous-titre {
+    display: block !important;
+}
+
+/* S'assurer que la description est toujours visible */
+.culte-description {
+    display: block !important;
+}
