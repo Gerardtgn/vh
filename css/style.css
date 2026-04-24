@@ -1,0 +1,1509 @@
+/* ========== VARIABLES - NOUVELLES COULEURS ========== */
+:root {
+    --primary-green: #376f6d;    /* Vert principal */
+    --primary-red: #ab232f;       /* Rouge */
+    --primary-yellow: #f4c10f;    /* Jaune */
+    --dark-bg: #1a2a2a;
+    --light-bg: #f8f9fa;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 20px rgba(0,0,0,0.1);
+    --shadow-hover: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* ========== NAVIGATION ========== */
+.navbar {
+    background: rgba(26, 42, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: var(--transition);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-scrolled {
+    padding: 0.5rem 0;
+    background: rgba(26, 42, 42, 0.98);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-yellow) !important;
+}
+
+.navbar-brand i {
+    color: var(--primary-yellow);
+}
+
+.navbar-brand small {
+    display: block;
+    font-size: 0.65rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-yellow) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-yellow);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.navbar-toggler {
+    border-color: var(--primary-yellow);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f4c10f' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, rgba(55,111,109,0.5), rgba(171,35,47,0.4)), 
+                url('../images/hero2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin-top: 76px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero h2 {
+    font-weight: 400;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.animation-delay-1 { animation-delay: 0.2s; }
+.animation-delay-2 { animation-delay: 0.4s; }
+.animation-delay-3 { animation-delay: 0.6s; }
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-yellow);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+
+/* ========== CARDS CULTES MODERN ========== */
+/* ========================================
+   CARTES CULTES - Vase d'Honneur
+   Remplace le bloc .cultes-section et
+   tout ce qui concerne .card-culte-modern
+   dans style.css
+   ======================================== */
+
+/* --- Section wrapper --- */
+.cultes-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+/* --- Grille --- */
+.cultes-section .row {
+    --bs-gutter-x: 1rem;
+}
+
+/* --- Carte --- */
+.card-culte-modern {
+    background: #ffffff;
+    border: 1px solid #e8eaed;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    height: auto;
+    /* on retire le fond dégradé */
+    box-shadow: none;
+}
+
+.card-culte-modern:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border-color: #d0d3d8;
+}
+
+/* --- Bande colorée en haut --- */
+.card-culte-stripe {
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+
+/* Couleurs par variante */
+.card-culte-modern:nth-child(1) .card-culte-stripe,
+.card-culte-stripe.stripe-teal   { background: #1D9E75; }
+
+.card-culte-modern:nth-child(2) .card-culte-stripe,
+.card-culte-stripe.stripe-amber  { background: #EF9F27; }
+
+.card-culte-modern:nth-child(3) .card-culte-stripe,
+.card-culte-stripe.stripe-purple { background: #7F77DD; }
+
+/* --- Corps de la carte --- */
+.card-culte-content {
+    padding: 24px 22px 0;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-align: left;
+    height: auto;
+    justify-content: flex-start;
+}
+
+/* --- Badge jour --- */
+.culte-jour-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    margin: 0 0 16px 0;
+    width: auto;
+}
+
+/* Couleur du texte jour par variante */
+.card-culte-modern:nth-child(1) .culte-jour-badge,
+.culte-jour-badge.badge-teal    { color: #0F6E56; }
+
+.card-culte-modern:nth-child(2) .culte-jour-badge,
+.culte-jour-badge.badge-gold    { color: #854F0B; }
+
+.card-culte-modern:nth-child(3) .culte-jour-badge,
+.culte-jour-badge.badge-green   { color: #534AB7; }
+
+/* --- Icône --- */
+.culte-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 22px;
+    margin-bottom: 16px;
+    opacity: 1;
+}
+
+.card-culte-modern:nth-child(1) .culte-icon,
+.culte-icon.icon-teal           { background: #E1F5EE; }
+
+.card-culte-modern:nth-child(2) .culte-icon,
+.culte-icon.icon-gold           { background: #FAEEDA; }
+
+.card-culte-modern:nth-child(3) .culte-icon,
+.culte-icon.icon-green          { background: #EEEDFE; }
+
+.card-culte-modern:hover .culte-icon {
+    transform: none;
+}
+
+/* --- Titre --- */
+.culte-titre {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+}
+
+/* --- Sous-titre --- */
+.culte-sous-titre {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 1;
+    color: #6c757d;
+    margin-bottom: 14px;
+    text-transform: none;
+}
+
+/* --- Description --- */
+.culte-description {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #6c757d;
+    opacity: 1;
+    margin: 0 0 20px;
+    font-weight: 400;
+}
+
+/* --- Bloc heure (pied de carte) --- */
+.culte-heure-bloc {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-top: 1px solid #f0f1f3;
+    margin: 0 -22px;
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.culte-heure-bloc i {
+    font-size: 8px;
+    opacity: 1;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Couleur du point heure par variante */
+.card-culte-modern:nth-child(1) .culte-heure-bloc i { color: #1D9E75; background: #1D9E75; }
+.card-culte-modern:nth-child(2) .culte-heure-bloc i { color: #EF9F27; background: #EF9F27; }
+.card-culte-modern:nth-child(3) .culte-heure-bloc i { color: #7F77DD; background: #7F77DD; }
+
+.card-culte-modern:hover .culte-heure-bloc {
+    background: transparent;
+    border-color: #e8eaed;
+}
+
+/* --- Éléments halo et footer (masqués) --- */
+.card-culte-background,
+.card-culte-halo,
+.card-culte-footer {
+    display: none !important;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .card-culte-modern {
+        height: auto;
+    }
+
+    .culte-titre {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-culte-modern {
+        height: auto;
+    }
+
+    .card-culte-content {
+        padding: 20px 18px 0;
+    }
+
+    .culte-heure-bloc {
+        padding: 12px 18px;
+        margin: 0 -18px;
+    }
+}
+
+/* ========== ANCIENS STYLES CULTE (pour compatibilité) ========== */
+.card-culte {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--primary-yellow);
+}
+
+.culte-badge {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background: var(--primary-red);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.culte-subtitle {
+    font-size: 0.95rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+/* ========== PASTEURS SECTION ========== */
+.pasteurs-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.card-pasteur {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-pasteur:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--shadow-hover);
+}
+
+.pasteur-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background: var(--light-bg);
+}
+
+.pasteur-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: var(--transition);
+}
+
+.card-pasteur:hover .pasteur-image {
+    transform: scale(1.05);
+}
+
+.pasteur-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.pasteur-badge.badge-principal {
+    background: var(--primary-red);
+}
+
+.pasteur-badge.badge-resident {
+    background: var(--primary-green);
+}
+
+.pasteur-info {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.pasteur-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.pasteur-titre {
+    font-size: 0.95rem;
+    color: var(--primary-yellow);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.pasteur-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pasteur-description i {
+    color: var(--primary-yellow);
+}
+
+/* ========== PROGRAMMES CARDS ========== */
+.programmes-section {
+    padding: 80px 0;
+}
+
+.card-programme {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.card-programme:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.programme-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-red));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.programme-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.card-programme h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* ========== SECTION DONS ========== */
+.dons-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark-bg), #2c3e50);
+    color: white;
+}
+
+.payment-methods {
+    margin-top: 2rem;
+}
+
+.payment-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.payment-card:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+.payment-card i {
+    font-size: 2rem;
+    color: var(--primary-yellow);
+}
+
+.payment-card code {
+    background: rgba(0,0,0,0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    color: var(--primary-yellow);
+}
+
+.don-cta {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* ========== SECTION CONNECT ========== */
+.connect-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+/* ========== PAGE HEADER ========== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-red));
+    padding: 120px 0 60px;
+    text-align: center;
+    color: white;
+    margin-top: 76px;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== RÊVE SECTION ========== */
+.reve-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fef9e6, #fff);
+}
+
+.reve-card {
+    background: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-bottom: 5px solid var(--primary-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.reve-card::before {
+    content: '✨';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.05;
+}
+
+.reve-card i {
+    font-size: 4rem;
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.reve-card h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.reve-card .verset {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ========== VISION & MISSION (NOUVEAU STYLE) ========== */
+.vision-mission {
+    padding: 80px 0;
+}
+
+.card-vision {
+    background: linear-gradient(135deg, #fff, #f5f5f5);
+    padding: 2.5rem;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 8px solid var(--primary-green);
+    position: relative;
+}
+
+.card-vision:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-vision i {
+    font-size: 3rem;
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.card-vision h3 {
+    color: var(--primary-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.card-vision p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.card-vision .verset {
+    display: inline-block;
+    background: var(--primary-red);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.card-mission {
+    background: linear-gradient(135deg, #fff, #f5f5f5);
+    padding: 2.5rem;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-right: 8px solid var(--primary-red);
+    position: relative;
+}
+
+.card-mission:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-mission i {
+    font-size: 3rem;
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.card-mission h3 {
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.card-mission p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.card-mission .verset {
+    display: inline-block;
+    background: var(--primary-green);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* ========== HISTOIRE SECTION ========== */
+.histoire-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+/* ========== CROYANCES ========== */
+.croyances-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.croyance-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.croyance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.croyance-card i {
+    font-size: 3rem;
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+}
+
+.croyance-card h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+/* ========== LEADERSHIP ========== */
+.pasteur-section {
+    padding: 80px 0;
+}
+
+.leader-card {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.leader-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.leader-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 5px solid var(--primary-yellow);
+}
+
+.leader-card h4 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-info {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--primary-yellow);
+    margin-top: 0.25rem;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary-green);
+}
+
+.info-item p {
+    margin-bottom: 0;
+    color: var(--text-light);
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form h2 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.urgent-prayer-modern {
+    background: linear-gradient(135deg, rgba(55, 111, 109, 0.95) 0%, rgba(171, 35, 47, 0.85) 100%);
+    padding: 4rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(55, 111, 109, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.urgent-prayer-modern::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(244, 193, 15, 0.1) 0%, rgba(244, 193, 15, 0) 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.urgent-prayer-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.urgent-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.95; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.urgent-prayer-modern h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.urgent-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.urgent-contact-methods {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.urgent-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 280px;
+}
+
+.urgent-method:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(244, 193, 15, 0.2);
+}
+
+.urgent-method i {
+    font-size: 2rem;
+    opacity: 0.95;
+}
+
+.urgent-method.whatsapp:hover i {
+    color: #25d366;
+}
+
+.urgent-method.phone:hover i {
+    color: #4CAF50;
+}
+
+.urgent-method div {
+    text-align: left;
+}
+
+.urgent-method .label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.85;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.urgent-method .value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.urgent-footer {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin: 0;
+    letter-spacing: 1.5px;
+}
+
+.urgent-prayer {
+    background: linear-gradient(135deg, #fef9e6, #fff);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--primary-yellow);
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: #2a5553;
+    border-color: #2a5553;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: var(--dark-bg);
+    color: #ccc;
+    padding: 60px 0 20px;
+}
+
+.footer h5 {
+    color: var(--primary-yellow);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-yellow);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--primary-yellow);
+    transform: translateY(-3px);
+    color: var(--dark-bg);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ========== MODAL ========== */
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-header {
+    background: var(--primary-green);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .reve-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .reve-card .verset {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        text-align: center;
+        margin-top: 66px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .card-culte, .card-programme {
+        margin-bottom: 1rem;
+    }
+    
+    .card-culte-modern {
+        height: 480px;
+    }
+    
+    .culte-titre {
+        font-size: 1.3rem;
+    }
+    
+    .payment-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .leader-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card-vision, .card-mission {
+        margin-bottom: 1.5rem;
+    }
+    
+    .reve-card {
+        padding: 2rem;
+    }
+    
+    .urgent-prayer-modern {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .urgent-prayer-modern h2 {
+        font-size: 1.6rem;
+    }
+    
+    .urgent-contact-methods {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .urgent-method {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 70vh;
+    }
+    
+    .hero .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero .btn.me-3 {
+        margin-right: 0 !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-culte-modern {
+        height: 420px;
+    }
+    
+    .culte-titre {
+        font-size: 1.1rem;
+    }
+    
+    .culte-icon {
+        font-size: 2.5rem;
+    }
+    
+    .card-culte-content {
+        padding: 1.8rem 1.5rem;
+    }
+}
+
+
+/* ========== STYLES PAGE À PROPOS (RÊVE, VISION, MISSION) ========== */
+
+/* SECTION RÊVE */
+.reve-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff8f0, #fff);
+}
+
+.reve-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 8px solid var(--primary-yellow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.reve-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.reve-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.reve-card h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.reve-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.reve-card .verset {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    font-style: italic;
+    background: #f5f5f5;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+}
+
+.globe-img {
+    max-height: 350px;
+    width: auto;
+    object-fit: cover;
+}
+
+/* SECTION VISION */
+.vision-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.vision-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-right: 8px solid var(--primary-green);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.vision-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.vision-card h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.vision-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.versets {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.verset-badge {
+    background: var(--primary-red);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.verset-badge.green {
+    background: var(--primary-green);
+}
+
+/* SECTION MISSION */
+.mission-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff, #fff8f0);
+}
+
+.mission-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 8px solid var(--primary-red);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mission-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.mission-card h2 {
+    color: var(--primary-red);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.mission-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* Images des sections */
+.vision-image img,
+.mission-image img,
+.reve-image img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.vision-image img:hover,
+.mission-image img:hover,
+.reve-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .reve-text {
+        font-size: 1.3rem;
+    }
+    
+    .reve-card h2,
+    .vision-card h2,
+    .mission-card h2 {
+        font-size: 1.6rem;
+    }
+    
+    .vision-text,
+    .mission-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .reve-section,
+    .vision-section,
+    .mission-section {
+        padding: 50px 0;
+    }
+    
+    .reve-card,
+    .vision-card,
+    .mission-card {
+        padding: 1.5rem;
+    }
+    
+    .reve-text {
+        font-size: 1.1rem;
+    }
+    
+    .verset-badge {
+        font-size: 0.7rem;
+    }
+}

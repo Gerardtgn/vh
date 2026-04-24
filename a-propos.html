@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>À propos - Vase d'Honneur Porte des Cieux</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ======= SLIDE-STYLE REDESIGN ======= */
+        :root {
+            --primary-green: #376f6d;
+            --primary-red: #ab232f;
+            --primary-yellow: #c9a227;
+            --dark-bg: #1a2a2a;
+            --text-dark: #1a2a2a;
+            --text-body: #3a3a3a;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 10px 30px rgba(0,0,0,0.13);
+        }
+
+        body { background: #fff; }
+
+        /* Decorative gold bar top-left */
+        .slide-section {
+            position: relative;
+            padding: 80px 0;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .slide-section.alt-bg {
+            background: #f7f7f7;
+        }
+
+        /* Gold accent bars like in slides */
+        .slide-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 22px;
+            background: var(--primary-yellow);
+            border-radius: 0 0 8px 0;
+        }
+
+        .slide-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 22px;
+            background: var(--primary-yellow);
+            border-radius: 8px 0 0 0;
+        }
+
+        /* Logo top-right area */
+        .slide-logo-area {
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            opacity: 0.15;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.7rem;
+            text-align: right;
+            color: var(--dark-bg);
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ---- RÊVE SLIDE ---- */
+        .reve-slide .content-col {
+            padding: 2rem 1rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .reve-slide .label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--primary-green);
+            letter-spacing: 2px;
+            margin-bottom: -0.3rem;
+            text-transform: uppercase;
+        }
+
+        .reve-slide .big-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 1.8rem;
+            letter-spacing: -1px;
+        }
+
+        .reve-slide .slide-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: var(--text-body);
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .reve-slide .verset-ref {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-body);
+        }
+
+        .reve-slide .image-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .reve-slide .globe-img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.12));
+        }
+
+        /* ---- VISION + MISSION SLIDE ---- */
+        .vm-slide {
+            padding: 80px 0;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vm-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 22px;
+            background: var(--primary-yellow);
+            border-radius: 0 0 8px 0;
+        }
+
+        .vm-slide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 22px;
+            background: var(--primary-yellow);
+            border-radius: 8px 0 0 0;
+        }
+
+        .vm-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .vm-block .vm-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.7rem;
+            line-height: 1;
+        }
+
+        .vm-block .vm-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            color: var(--text-body);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+
+        .vm-block .vm-versets {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        /* Image with gold pill decoration */
+        .vm-img-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .vm-img-wrap img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 18px;
+            object-fit: cover;
+            height: 260px;
+            display: block;
+        }
+
+        .vm-img-pill {
+            position: absolute;
+            bottom: -14px;
+            right: -14px;
+            width: 80px;
+            height: 40px;
+            background: var(--primary-yellow);
+            border-radius: 30px;
+            z-index: 2;
+        }
+
+        .vm-img-pill-bottom {
+            position: absolute;
+            bottom: -14px;
+            right: -14px;
+        }
+
+        /* Divider */
+        .vm-divider {
+            border: none;
+            border-top: 1.5px solid #e5e5e5;
+            margin: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .vm-slide {
+                padding: 60px 0;
+            }
+            
+            .vm-block .vm-title { 
+                font-size: 2.2rem; 
+            }
+            
+            .vm-img-wrap img { 
+                max-width: 360px;
+                height: 220px; 
+            }
+            
+            .reve-slide .big-title { 
+                font-size: 4rem; 
+            }
+            
+            .reve-slide .slide-text { 
+                font-size: 1.15rem; 
+            }
+            
+        }
+
+        @media (max-width: 768px) {
+            .reve-slide .big-title { font-size: 3rem; }
+            .vm-block .vm-title { font-size: 2rem; }
+            .vm-img-wrap img { 
+                height: 200px; 
+                max-width: 100%;
+            }
+            
+            .reve-slide .content-col {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .reve-slide .slide-text { 
+                font-size: 1.1rem; 
+            }
+            
+            .slide-section,
+            .vm-slide {
+                padding: 50px 0;
+            }
+            
+            /* On mobile, stack the order-lg classes don't apply */
+            .col-lg-6.order-lg-1,
+            .col-lg-6.order-lg-2 {
+                order: unset;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .reve-slide .big-title { font-size: 2.2rem; }
+            .reve-slide .label { font-size: 1.1rem; }
+            .vm-block .vm-title { font-size: 1.5rem; }
+            .vm-block .vm-text { font-size: 0.95rem; }
+            .vm-block .vm-versets { font-size: 0.9rem; }
+            
+            .vm-img-wrap img { 
+                max-width: 100%;
+                height: 180px; 
+            }
+            
+            .reve-slide .slide-text { 
+                font-size: 1rem; 
+            }
+            
+            .reve-slide .verset-ref { 
+                font-size: 1rem; 
+            }
+            
+        /* ---- NOTRE RÊVE SECTION IMPROVEMENTS ---- */
+        .reve-dream-section {
+            background: #fff;
+        }
+        
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <!-- <i class="fas fa-church me-2"></i>
+                <span>Vase d'Honneur</span>
+                <small>Porte des Cieux</small> -->
+                <img src="images/logo.png" width="100px" alt="Logo Vase d'Honneur" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="a-propos.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>À propos de nous</h1>
+                <p>Découvrez notre cœur, notre appel et notre destinée</p>
+            </div>
+        </section>
+
+        <!-- ===== VISION (slide 2 style) ===== -->
+        <section class="vm-slide">
+            <div class="slide-logo-area">VASES D'HONNEUR<br>ASSEMBLÉE<br>PORTE DES CIEUX</div>
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <!-- Left: Vision image -->
+                    <div class="col-lg-5 d-flex justify-content-center">
+                        <div class="vm-img-wrap">
+                            <img src="https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vision" />
+                            <div class="vm-img-pill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Vision text -->
+                    <div class="col-lg-7">
+                        <!-- VISION -->
+                        <div class="vm-block mb-0">
+                            <div class="vm-title">VISION</div>
+                            <p class="vm-text">Par Christ, nous faisons des nations des Vases d'Honneur (des intimes de DIEU) pour la manifestation de son règne.</p>
+                            <div class="vm-versets">Matthieu 28 : 12 &nbsp;&nbsp; 2 Thimothée 2 : 20</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MISSION (inverted layout) ===== -->
+        <section class="vm-slide">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <!-- Left: Mission text -->
+                    <div class="col-lg-7 order-lg-1">
+                        <!-- MISSION -->
+                        <div class="vm-block mb-0">
+                            <div class="vm-title">MISSION</div>
+                            <p class="vm-text">Faire entrer la Dîme (10%) des âmes de toute famille dans la maison de DIEU.</p>
+                            <div class="vm-versets">Lévitique 27 : 30, 32 &nbsp;&nbsp; Exode 34 : 19</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Mission image -->
+                    <div class="col-lg-5 order-lg-2 d-flex justify-content-center">
+                        <div class="vm-img-wrap">
+                            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mission" />
+                            <div class="vm-img-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NOTRE RÊVE (slide 1 style) ===== -->
+        <section class="slide-section reve-slide reve-dream-section">
+            <div class="slide-logo-area">VASES D'HONNEUR<br>ASSEMBLÉE<br>PORTE DES CIEUX</div>
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <!-- Left: text -->
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="vm-block mb-0">
+                            <div class="vm-title">RÊVE</div>
+                            <p class="vm-text">Le règne et la gloire de Dieu sur toute la terre</p>
+                            <div class="vm-versets">Esaïe 11 : 9</div>
+                        </div>
+                    </div>
+                    <!-- Right: globe -->
+                    <div class="col-lg-6 image-col order-lg-2">
+                        <img src="./images/globe1.png"
+                             alt="Globe terrestre"
+                             class="globe-img img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Vase d'Honneur</h5>
+                    <p>Assemblée Porte des Cieux<br>Une église de gloire et de puissance à Cotonou</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Suivez-nous</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vase d'Honneur - Porte des Cieux. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
