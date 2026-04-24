@@ -216,6 +216,28 @@ h1, h2, h3, h4, h5, .navbar-brand {
     border-color: #d0d3d8;
 }
 
+/* Image wrapper pour les affiches */
+.culte-image-wrapper {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.culte-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-culte-modern:hover .culte-image {
+    transform: scale(1.05);
+}
+
 /* --- Bande colorée en haut --- */
 .card-culte-stripe {
     height: 5px;
@@ -272,7 +294,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* --- Icône --- */
 .culte-icon {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 52px;
