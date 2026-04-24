@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
     background-position: center;
     background-attachment: fixed;
     position: relative;
-    margin-top: 76px;
+    margin-top: 90px;
 }
 
 .hero h1 {
@@ -1151,6 +1151,12 @@ h1, h2, h3, h4, h5, .navbar-brand {
 }
 
 /* ========== RESPONSIVE ========== */
+@media (min-width: 992px) {
+    .hero {
+        padding-top: 2.5rem;
+    }
+}
+
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -1252,9 +1258,33 @@ h1, h2, h3, h4, h5, .navbar-brand {
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 4rem;
+        min-height: 75vh;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
 @media (max-width: 576px) {
     .hero {
         min-height: 70vh;
+        padding-top: 5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
     }
     
     .hero .btn {
@@ -1507,3 +1537,41 @@ h1, h2, h3, h4, h5, .navbar-brand {
         font-size: 0.7rem;
     }
 }
+
+
+/* Reset du lien */
+.navbar .nav-link {
+    position: relative;
+    display: inline-block; /* IMPORTANT */
+    padding-bottom: 5px;
+}
+
+/* Petit trait */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* ou ta couleur */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Hover effet */
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 20px; /* taille du petit trait */
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar .nav-link {
+        display: inline-block;
+    }
+}
+
